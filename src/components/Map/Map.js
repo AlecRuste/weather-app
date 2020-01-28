@@ -11,12 +11,6 @@ class Map extends Component {
     this.fetchWeatherData();
   }
 
-  componentDidUpdate(prevState, prevProps) {
-    if (this.state.weatherData !== prevState.weatherData) {
-      this.renderMap();
-    }
-  }
-
   renderMap = () => {
     loadScript(`https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS_KEY}&callback=initMap`);
     window.initMap = this.initMap;
@@ -25,12 +19,12 @@ class Map extends Component {
   fetchWeatherData = () => {
     const latitude = Math.round(this.props.centerPosition.coords.latitude);
     const longitude = Math.round(this.props.centerPosition.coords.longitude);
-    const url = `http://api.openweathermap.org/data/2.5/find?lat=${latitude}&lon=${longitude}.5&cnt=10&appid=`;
+    const url = `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=`;
     const key = OPEN_WEATHER_KEY;
     fetch(url + key)
       .then(response => response.json())
       .then(parsedJson => {
-        this.setState({ weatherData: parsedJson });
+        this.setState({ weatherData: parsedJson }, this.renderMap());
       })
       .catch(error => alert('API Error' + error));
   };
@@ -42,12 +36,25 @@ class Map extends Component {
         lat: this.props.centerPosition.coords.latitude,
         lng: this.props.centerPosition.coords.longitude,
       },
-      zoom: 13,
+      zoom: 14,
     });
 
     map.data.loadGeoJson('https://storage.googleapis.com/mapsdevsite/json/google.json');
 
-    console.log(weatherData);
+    const icon = {
+      url: `http://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`, // url
+      scaledSize: new global.google.maps.Size(75, 75),
+    };
+
+    const marker = new global.google.maps.Marker({
+      position: {
+        lat: this.props.centerPosition.coords.latitude,
+        lng: this.props.centerPosition.coords.longitude,
+      },
+      map,
+      animation: window.google.maps.Animation.DROP,
+      icon,
+    });
   };
 
   render() {
