@@ -1,0 +1,57 @@
+.menu__form {
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 1rem;
+
+  select {
+    width: 52vw;
+    background-color: #ffffff;
+    padding: 0.1rem;
+  }
+
+  .menu__form__input {
+    width: 50vw;
+    margin: 0.5rem;
+    padding: 0.1rem;
+    border-radius: 5px;
+    text-indent: 0.2em;
+  }
+
+  .menu__form__input::placeholder {
+    color: #000000;
+  }
+
+  .menu__form__button {
+    color: #ffffff;
+    background-color: #423830;
+    border-radius: 10px;
+    border: none;
+    padding: 0.5rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .menu__form {
+    select {
+      width: 25.4vw;
+      height: 5.5vh;
+      font-size: 2em;
+    }
+
+    .menu__form__input {
+      width: 25vw;
+      height: 5vh;
+      border-radius: 10px;
+      font-size: 2em;
+    }
+
+    .menu__form__button {
+      margin-top: 2rem;
+      padding: 2rem;
+      font-size: 2em;
+    }
+  }
+}

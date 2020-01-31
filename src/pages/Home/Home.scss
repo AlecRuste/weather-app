@@ -1,0 +1,125 @@
+.activity-indicator {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  height: 100vh;
+  background-color: rgba(58, 62, 108, 0.5);
+  background-image: url('../../assets/thunderstorm.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+
+  .weather {
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    order: 1;
+
+    .weather__data {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex-wrap: wrap;
+
+      .weather__data__main {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        .weather__data__main__city {
+          font-size: 2em;
+          margin-left: 1.5rem;
+          padding-top: 1rem;
+        }
+
+        .weather__data__main__info {
+          display: flex;
+          align-items: center;
+        }
+
+        .weather__data__main__temperature {
+          font-size: 2em;
+        }
+      }
+
+      .weather__data__plus__item {
+        font-size: 1.1em;
+        margin: 0.2rem;
+      }
+    }
+  }
+
+  .map {
+    width: 100%;
+    height: 50%;
+    order: 2;
+  }
+
+  .menu {
+    width: 100%;
+    height: 25%;
+    order: 3;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .main {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    .weather {
+      height: 50%;
+      width: 50%;
+      justify-content: center;
+      margin-right: 2rem;
+
+      .weather__data {
+        .weather__data__main {
+          .weather__data__main__city {
+            font-size: 7em;
+          }
+
+          .weather__data__main__info {
+            display: flex;
+            align-items: center;
+          }
+
+          .weather__data__main__icon {
+            width: 10rem;
+            height: 10rem;
+          }
+
+          .weather__data__main__temperature {
+            font-size: 5em;
+          }
+        }
+
+        .weather__data__plus__item {
+          font-size: 3em;
+          margin: 1rem;
+        }
+      }
+    }
+
+    .map {
+      width: 100%;
+      height: 50%;
+      order: 3;
+    }
+
+    .menu {
+      width: 20%;
+      order: 2;
+    }
+  }
+}

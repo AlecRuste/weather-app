@@ -1,11 +1,13 @@
 {
   "name": "weather",
   "version": "0.1.0",
+  "sasslintConfig": "./.sasslintrc.json",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "escape-string-regexp": "^2.0.0",
     "node-sass": "^4.13.1",
     "react": "^16.12.0",
     "react-country-region-selector": "^1.4.7",
@@ -46,6 +48,7 @@
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.18.0",
     "eslint-plugin-react-hooks": "^1.7.0",
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "sass-lint": "^1.13.1"
   }
 }

@@ -1,5 +1,16 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Requirements
+
+In order to run this project add: Google Maps Api Key and Open Weather Map Api Key in to 'project/src/config/index.js'.
+
+## To Do
+
+API dependant data checks
+SASS Lint config
+Map re-render bug
+etc
+
 ## Available Scripts
 
 In the project directory, you can run:
