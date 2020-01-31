@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Requirements
 
-In order to run this project add: Google Maps Api Key and Open Weather Map Api Key in to 'project/src/config/index.js'.
+In order to start this project run `npm install` and add Google Maps Api Key and Open Weather Map Api Key in to `'project/src/config/index.js'`.
 
 ## To Do
 
